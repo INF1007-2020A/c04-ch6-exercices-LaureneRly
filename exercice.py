@@ -5,21 +5,29 @@
 def order(values: list = None) -> list:
     if values is None:
         # TODO: demander les valeurs ici
-        pass
+        values=[]
 
-    return []
-
+        while len(values) < 10:
+                values.append(int(input('Entrer un seul element:\n' )))
+    sorted_list = sorted(values)
+    print(sorted_list)
+    return sorted_list
 
 def anagrams(words: list = None) -> bool:
     if words is None:
-        # TODO: demander les mots ici
-        pass
+        words=[]
+        while len(words) < 2:
+            words.append((input('Entrer un seul mot en minuscule svp:\n' )))
 
-    return False
+        # TODO: demander les mots ici
+
+    return sorted(words[0]) == sorted(words[1])
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    ensemble = set(items)
+    return len(set(items)) != len(items)
+
 
 
 def best_grades(student_grades: dict) -> dict:
